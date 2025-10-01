@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
     <link rel="stylesheet" href="../css/contact.css">
-    <title>Contact</title>
+    <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Contact Page</h1>
-    <p>This is the contact page of the portfolio.</p>
+    <div class="container">
+        <!-- Columna izquierda -->
+        <div class="info">
+            <div class="contact">
+                <h2>Donde encontrarnos</h2>
+                <p>Dirección:</p>
+                <p>Avenida del Sol, 123
+                    Edificio Nova, Planta 5
+                    28045, Ciudad Nova</p>
+                <p>Teléfono: +34 600 123 456</p>
+                <p>Email: contacto@tudominio.com</p>
+            </div>
+
+            <div class="social">
+                <h2>Otras formas de contacto</h2>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-brands fa-discord"></i>
+            </div>
+
+            <footer>
+                <small>© 2025 Política de privacidad</small>
+            </footer>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="formulario">
+            <h2>Formulario de contacto</h2>
+            <form>
+                <input type="text" name="nombre" placeholder="Enter your Name" required>
+                <input type="email" name="mail" placeholder="Enter a valid email address" required>
+                <textarea placeholder="Enter your message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

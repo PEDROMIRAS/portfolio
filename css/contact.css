@@ -7,10 +7,133 @@
 */
 /* ====== ESTILO GENERAL DEL BODY ====== */
 body {
-    margin: 0; /* eliminar márgenes predeterminados del navegador */
-    font-family: 'Roboto', Arial, sans-serif; /* fuente moderna */
-    background-color: #101828; /* color de fondo principal */
-    color: #e0e0e0; /* texto gris claro para contraste suave */
-    display: flex; /* layout flexbox para contenido y sidebar */
-    transition: background 0.3s; /* transición suave si se cambia fondo */
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #101828; /* Fondo principal */
+    color: #e0e0e0; /* Texto gris claro */
+    display: flex;
+    transition: background 0.3s;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ====== Columna izquierda (Sidebar) ====== */
+.info {
+    flex: 1;
+    padding: 50px;
+    background: linear-gradient(180deg, #101828, #1f3a55);
+    color: #e0e0e0;
+}
+
+.info h2 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.info p {
+    margin: 5px 0 20px 0;
+    line-height: 1.5;
+    color: #cfd8e3;
+}
+
+.social, .contact {
+    margin: 20px 0;
+}
+
+.social i {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #e0e0e0;
+    padding: 8px;
+    border-radius: 50%;
+    background: #1f3a55;
+    transition: background 0.3s, color 0.3s;
+}
+
+.social i:hover {
+    background: linear-gradient(180deg, #1f3a55, #101828);
+    /*Brillo al situarte sobre el icono*/
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.info small {
+    display: block;
+    margin-top: 30px;
+    color: #aaa;
+}
+
+/* ====== Columna derecha (Formulario) ====== */
+.formulario {
+    flex: 1;
+    background: linear-gradient(180deg, #1f3a55, #101828);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #ffffff; /* texto blanco */
+    text-transform: uppercase;
+}
+
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #101828;
+}
+
+.formulario textarea {
+    resize: none;
+    height: 120px;
+}
+
+.formulario button {
+    background: transparent;
+    border: 2px solid #ffffff; /* borde blanco */
+    color: #ffffff; /* texto blanco */
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.formulario button:hover {
+    background: #ffffff;
+    color: #243b64; /* invierte colores en hover */
+}
+/* ====== SEPARADOR ====== */
+.separator {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* línea sutil */
+    margin: 10px 0; /* separación vertical */
+}
+/* =======FOOTER ======= */
+footer {
+    padding: 15px 20px; /* espacio interno */
+    font-size: 12px; /* tamaño de texto pequeño */
+    text-align: center; /* centrado */
+    color: #bbb; /* color gris claro */
+    bottom: 0;
+    margin-bottom: 10px; /* separación inferior */
 }
