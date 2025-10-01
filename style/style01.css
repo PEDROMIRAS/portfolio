@@ -1,0 +1,169 @@
+/* ============================
+    PALETA DE COLORES
+    ============================
+    - Fondo principal: #141E30 (azul muy oscuro)
+    - Sidebar: degradado de #141E30 → #243B55
+    - Hover: degradado inverso #243B55 → #141E30
+*/
+
+/* ====== ESTILO GENERAL DEL BODY ====== */
+body {
+    margin: 0; /* eliminar márgenes predeterminados del navegador */
+    font-family: Arial, sans-serif; /* fuente legible estándar */
+    background-color: #141E30; /* color de fondo principal */
+    color: #ffffff; /* texto blanco para contraste */
+    display: flex; /* layout flexbox para contenido y sidebar */
+    transition: background 0.3s; /* transición suave si se cambia fondo */
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    position: fixed; /* fija la sidebar al viewport */
+    top: 0;
+    left: 0;
+    width: 200px; /* ancho inicial de la sidebar expandida */
+    height: 100vh; /* ocupa toda la altura de la ventana */
+    background: linear-gradient(180deg, #141E30 0%, #243B55 100%); /* degradado vertical */
+    padding-top: 20px; /* espacio arriba para el menú */
+    overflow: hidden; /* ocultar contenido que sobrepase el contenedor */
+    z-index: 100; /* por encima del contenido principal */
+
+    display: flex;
+    flex-direction: column; /* organizar menú arriba y footer abajo */
+    justify-content: space-between;
+
+    /* Transiciones suaves al colapsar/ocultar */
+    transition: width 0.4s ease, transform 0.4s ease;
+}
+/* ====== ESTADO COLAPSADO ====== */
+.sidebar.collapsed {
+    width: 80px; /* ancho reducido al colapsar */
+}
+/* ====== ESTADO OCULTO ====== */
+.sidebar.hidden {
+    transform: translateX(-100%); /* desplaza la sidebar fuera de pantalla */
+}
+
+/* ====== HAMBURGER BUTTON ====== */
+.hamburger {
+    position: fixed; /* fijo en la pantalla */
+    top: 15px;
+    left: 15px; /* espacio desde el borde izquierdo */
+    background: #243B55; /* color de fondo del botón */
+    border: none; /* sin borde */
+    color: white; /* icono blanco */
+    font-size: 24px; /* tamaño del icono */
+    cursor: pointer; /* cursor tipo pointer al pasar el ratón */
+    padding: 8px 10px; /* espacio interno */
+    border-radius: 5px; /* bordes redondeados */
+    z-index: 200; /* encima de la sidebar */
+    transition: background 0.3s, transform 0.3s; /* animación suave al hover */
+}
+.hamburger:hover {
+    background-color: #141E30; /* cambio de color al pasar el ratón */
+    transform: scale(1.1); /* efecto de zoom leve */
+}
+
+/* ====== MENU ====== */
+.menu {
+    list-style: none; /* quitar viñetas */
+    padding: 0; /* quitar padding predeterminado */
+    margin: 60px 0 0 0; /* espacio superior para separarse del header */
+}
+.menu li {
+    display: flex; /* flex para icono y texto en fila */
+    align-items: center; /* centrar verticalmente icono y texto */
+    padding: 15px 20px; /* espacio interno */
+    cursor: pointer; /* indicar que es interactivo */
+    transition: background 0.3s, transform 0.2s; /* animaciones suaves */
+}
+.menu li:hover {
+    background: linear-gradient(90deg, #243B55 0%, #141E30 100%); /* degradado hover */
+    transform: translateX(5px); /* pequeño desplazamiento al hover */
+}
+/* ====== ICONOS ====== */
+.menu li i {
+    font-size: 20px; /* tamaño del icono */
+    width: 25px; /* ancho fijo para alinear todos los iconos */
+    text-align: center; /* centrar icono dentro del espacio */
+    color: #fff; /* color blanco */
+}
+/* ====== TEXTO DEL MENU ====== */
+.menu li span {
+    margin-left: 10px; /* espacio entre icono y texto */
+    white-space: nowrap; /* evita que el texto se divida en varias líneas */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* animación suave al aparecer/desaparecer */
+}
+/* ====== OCULTAR TEXTO EN COLAPSADO ====== */
+.sidebar.collapsed .menu li span {
+    opacity: 0; /* desaparece */
+    transform: translateX(-20px); /* se mueve hacia la izquierda */
+    visibility: hidden; /* invisibilidad para evitar tabulación */
+}
+
+/* ====== SEPARADOR ====== */
+.separator {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* línea sutil */
+    margin: 10px 0; /* separación vertical */
+}
+
+/* ====== FOOTER EN SIDEBAR ====== */
+.sidebar-footer {
+    padding: 15px 20px; /* espacio interno */
+    font-size: 12px; /* tamaño de texto pequeño */
+    text-align: center; /* centrado */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* línea superior */
+    color: #bbb; /* color gris claro */
+    margin-bottom: 10px; /* separación inferior */
+
+    /* transición suave al colapsar */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.sidebar.collapsed .sidebar-footer {
+    opacity: 0; /* desaparecer */
+    transform: translateX(-20px); /* movimiento lateral al desaparecer */
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.content {
+    margin-left: 250px; /* espacio para sidebar expandida */
+    padding: 20px; /* espacio interno */
+    transition: margin-left 0.4s ease; /* animación al colapsar/ocultar */
+    flex-grow: 1; /* ocupa el espacio restante */
+}
+.sidebar.collapsed ~ .content {
+    margin-left: 80px; /* ajusta al colapsar */
+}
+.sidebar.hidden ~ .content {
+    margin-left: 60px; /* espacio para botón fijo al ocultar */
+}
+
+/* ====== DIV y SECTION (BOXES) ====== */
+.box {
+    background: rgba(255, 255, 255, 0.1); /* fondo semi-transparente */
+    padding: 15px; /* espacio interno */
+    margin-bottom: 20px; /* separación entre cajas */
+    border-radius: 8px; /* esquinas redondeadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* sombra suave */
+}
+
+/* ====== UTILIDADES PEQUEÑAS ====== */
+
+/* Centrar contenido interno en ambos ejes */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Margen superior pequeño (0.5rem ≈ 8px) */
+.mt-1 { margin-top: 0.5rem; }
+
+/* Margen inferior pequeño (0.5rem ≈ 8px) */
+.mb-1 { margin-bottom: 0.5rem; }
+
+/* Recordatorio:
+    Estas utilidades se pueden aplicar directamente en el HTML usando la propiedad "class".
+    Ejemplo:
+    <div class="center mt-1">Contenido centrado con margen arriba</div>
+*/
