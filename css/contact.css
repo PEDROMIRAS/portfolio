@@ -1,139 +1,190 @@
 /* ============================
     PALETA DE COLORES
     ============================
-    - Fondo principal: #101828 (azul muy oscuro suavizado)
+    - Fondo principal: #101828 (gris oscuro/azulado)
     - Sidebar: degradado de #101828 → #1f3a55
     - Hover: degradado inverso #1f3a55 → #101828
 */
+
 /* ====== ESTILO GENERAL DEL BODY ====== */
 body {
-    margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #101828; /* Fondo principal */
-    color: #e0e0e0; /* Texto gris claro */
-    display: flex;
-    transition: background 0.3s;
+    margin: 0; /* Quita márgenes por defecto del navegador */
+    font-family: 'Roboto', Arial, sans-serif; /* Fuente principal */
+    background: linear-gradient(180deg, #101828, #1f3a55); /* Degradado vertical de fondo */
+    color: #e0e0e0; /* Texto claro por defecto */
+    display: flex; /* El body se comporta como un contenedor flexible */
+    transition: background 0.3s; /* Transición suave si cambia el fondo */
 }
 
 /* ====== CONTENEDOR PRINCIPAL ====== */
 .container {
-    display: flex;
-    min-height: 100vh;
+    display: flex; /* Distribuye en columnas los hijos (.info y .formulario) */
+    min-height: 100vh; /* Altura mínima = 100% del viewport */
 }
 
-/* ====== Columna izquierda (Sidebar) ====== */
+/* ====== Columna izquierda (Sidebar de información) ====== */
 .info {
-    flex: 1;
-    padding: 50px;
-    background: linear-gradient(180deg, #101828, #1f3a55);
-    color: #e0e0e0;
+    flex: 1; /* Ocupa 1 parte proporcional (1/3) del espacio */
+    padding: 50px; /* Espaciado interno */
+    background: transparent; /* Transparente para que se vea el degradado del body */
+    color: #e0e0e0; /* Texto claro */
+    display: flex; /* Distribuye los elementos en columna */
+    flex-direction: column;
+    justify-content: space-between; /* Espacia arriba y abajo el contenido */
 }
 
 .info h2 {
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    color: #ffffff;
+    font-size: 18px; /* Tamaño de subtítulo */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-bottom: 15px; /* Separación inferior */
+    text-transform: uppercase; /* Convierte texto a mayúsculas */
+    color: #ffffff; /* Color blanco puro */
 }
 
 .info p {
-    margin: 5px 0 20px 0;
-    line-height: 1.5;
-    color: #cfd8e3;
+    margin: 5px 0 20px 0; /* Márgenes arriba y abajo */
+    line-height: 1.5; /* Altura de línea */
+    color: #cfd8e3; /* Gris más claro para mejor legibilidad */
 }
 
-.social, .contact {
-    margin: 20px 0;
+/* ====== OCULTAR DIV CONTACT ====== */
+.info .contact {
+    display: none; /* Oculta el bloque de contacto */
 }
 
-.social i {
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: none;
-    font-size: 20px;
+/* ====== ESTILO MEJORADO PARA DIV SOCIAL ====== */
+.social {
+    display: flex; /* Flex para alinear elementos */
+    flex-direction: column; /* Columna vertical */
+    gap: 15px; /* Espacio entre elementos */
+    margin: 20px 0; /* Margen vertical */
+}
+/* ====== H2 de social completamente estirado ====== */
+.social h2 {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: left; /* Alineación a la izquierda */
+    margin-bottom: 25px; /* Más espacio debajo */
+    font-size: 20px; /* Tamaño un poco mayor */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.social ul {
+    list-style: none; /* Quita los bullets */
+    padding: 0;
+    display: flex; /* Flex para alinear icono + texto */
+    flex-direction: column; /* Columnas verticales */
+    gap: 10px; /* Separación entre cada item */
+}
+
+.social ul li {
+    display: flex; /* Flex para icono + texto */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre icono y texto */
+    font-size: 16px;
     color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social ul li:hover {
+    color: #ffffff; /* Texto blanco al pasar */
+}
+
+.social ul i {
+    font-size: 30px; /* Iconos más consistentes */
+    background: #1f3a55; /* Fondo circular */
     padding: 8px;
     border-radius: 50%;
-    background: #1f3a55;
-    transition: background 0.3s, color 0.3s;
+    color: #e0e0e0;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
-.social i:hover {
+.social ul li:hover i {
     background: linear-gradient(180deg, #1f3a55, #101828);
-    /*Brillo al situarte sobre el icono*/
     color: #ffffff;
     transform: scale(1.1);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Efecto de brillo al pasar */
 }
 
-.info small {
-    display: block;
-    margin-top: 30px;
-    color: #aaa;
+/* ====== PIE DE PÁGINA ====== */
+footer {
+    padding: 15px 20px; /* Espaciado interno */
+    font-size: 12px; /* Tamaño pequeño */
+    text-align: center; /* Texto centrado */
+    color: #bbb; /* Gris claro */
 }
 
-/* ====== Columna derecha (Formulario) ====== */
+/* ====== Columna derecha (Formulario de contacto) ====== */
 .formulario {
-    flex: 1;
-    background: linear-gradient(180deg, #1f3a55, #101828);
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex: 2; /* Ocupa el doble de espacio que .info */
+    background: linear-gradient(180deg, #1f3a55, #101828); /* Degradado inverso */
+    display: flex; /* Contenedor flexible */
+    justify-content: flex-end; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 80px; /* Relleno interno */
 }
 
-.formulario h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    color: #ffffff; /* texto blanco */
-    text-transform: uppercase;
+/* ====== Caja del formulario (Tarjeta blanca) ====== */
+.form-box {
+    background: #ffffff; /* Fondo blanco */
+    color: #101828; /* Texto oscuro */
+    padding: 70px; /* Espaciado interno amplio */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Sombra flotante */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 500px; /* Máximo ancho limitado */
+    text-align: center; /* Centra el texto dentro */
 }
 
-.formulario input, 
-.formulario textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    font-size: 14px;
-    background: #ffffff;
-    color: #101828;
+.form-box h2 {
+    font-size: 22px; /* Tamaño del título */
+    margin-bottom: 20px; /* Separación inferior */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    color: #101828; /* Texto oscuro */
+    text-transform: uppercase; /* Mayúsculas */
 }
 
-.formulario textarea {
-    resize: none;
-    height: 120px;
+/* ====== Inputs y textarea ====== */
+.form-box input, 
+.form-box textarea {
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 12px; /* Relleno interno */
+    margin-bottom: 15px; /* Separación entre campos */
+    border: 1px solid #ccc; /* Borde gris claro */
+    outline: none; /* Quita contorno azul de focus */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de texto */
+    background: #f9f9f9; /* Fondo gris muy claro */
+    color: #101828; /* Texto oscuro */
 }
 
-.formulario button {
-    background: transparent;
-    border: 2px solid #ffffff; /* borde blanco */
-    color: #ffffff; /* texto blanco */
-    padding: 10px 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    font-weight: bold;
+.form-box textarea {
+    resize: none; /* Bloquea el redimensionado */
+    height: 120px; /* Altura fija */
 }
-.formulario button:hover {
-    background: #ffffff;
-    color: #243b64; /* invierte colores en hover */
+
+/* ====== Botón ====== */
+.form-box button {
+    background: #243b64; /* Fondo azul oscuro */
+    border: none; /* Sin borde */
+    color: #ffffff; /* Texto blanco */
+    padding: 12px 25px; /* Espaciado interno */
+    cursor: pointer; /* Mano al pasar */
+    transition: 0.3s; /* Transición suave en hover */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: bold; /* Negrita */
+    border-radius: 5px; /* Bordes redondeados */
 }
+
+.form-box button:hover {
+    background: #ffffff; /* Fondo blanco */
+    color: #243b64; /* Texto azul oscuro */
+    border: 2px solid #243b64; /* Borde azul */
+}
+
 /* ====== SEPARADOR ====== */
 .separator {
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* línea sutil */
-    margin: 10px 0; /* separación vertical */
-}
-/* =======FOOTER ======= */
-footer {
-    padding: 15px 20px; /* espacio interno */
-    font-size: 12px; /* tamaño de texto pequeño */
-    text-align: center; /* centrado */
-    color: #bbb; /* color gris claro */
-    bottom: 0;
-    margin-bottom: 10px; /* separación inferior */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil transparente */
+    margin: 10px 0; /* Espaciado vertical */
 }

@@ -10,6 +10,7 @@
 <body>
     <div class="container">
         <!-- Columna izquierda -->
+        <!--.info actualmente oculta aunque sea informacion inventada-->
         <div class="info">
             <div class="contact">
                 <h2>Donde encontrarnos</h2>
@@ -23,9 +24,11 @@
 
             <div class="social">
                 <h2>Otras formas de contacto</h2>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fa-brands fa-discord"></i>
+                <ul>
+                    <li><i class="fa-brands fa-linkedin-in"></i></i>LinkedIn</li>
+                    <li><i class="fa-solid fa-envelope"></i>Email</li>
+                    <li><i class="fa-brands fa-discord"></i>Discord</li>
+                </ul>
             </div>
 
             <footer>
@@ -35,13 +38,15 @@
 
         <!-- Columna derecha -->
         <div class="formulario">
-            <h2>Formulario de contacto</h2>
-            <form>
-                <input type="text" name="nombre" placeholder="Enter your Name" required>
-                <input type="email" name="mail" placeholder="Enter a valid email address" required>
-                <textarea placeholder="Enter your message" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+            <div class="form-box">
+                <h2>Formulario de contacto</h2>
+                <form>
+                    <input type="text" name="nombre" placeholder="Enter your Name" required>
+                    <input type="email" name="mail" placeholder="Enter a valid email address" required>
+                    <textarea placeholder="Enter your message" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
