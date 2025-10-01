@@ -51,4 +51,11 @@ function openGitHub() {
     window.open("https://github.com/PEDROMIRAS", "_blank");
 }
 githubBtn.addEventListener('click', openGitHub);
+
+//====== Contact Link ======
+const contactBtn = document.getElementById('contact');
+function openContact() {
+    window.open("../public/contact.html", "_blank");
+}
+contactBtn.addEventListener('click', openContact);
 // Fin script.js

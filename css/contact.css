@@ -1,0 +1,16 @@
+/* ============================
+    PALETA DE COLORES
+    ============================
+    - Fondo principal: #101828 (azul muy oscuro suavizado)
+    - Sidebar: degradado de #101828 → #1f3a55
+    - Hover: degradado inverso #1f3a55 → #101828
+*/
+/* ====== ESTILO GENERAL DEL BODY ====== */
+body {
+    margin: 0; /* eliminar márgenes predeterminados del navegador */
+    font-family: 'Roboto', Arial, sans-serif; /* fuente moderna */
+    background-color: #101828; /* color de fondo principal */
+    color: #e0e0e0; /* texto gris claro para contraste suave */
+    display: flex; /* layout flexbox para contenido y sidebar */
+    transition: background 0.3s; /* transición suave si se cambia fondo */
+}

@@ -19,7 +19,7 @@ body {
     position: fixed; /* fija la sidebar al viewport */
     top: 0;
     left: 0;
-    width: 200px; /* ancho inicial de la sidebar expandida */
+    width: 180px; /* ancho inicial de la sidebar expandida */
     height: 100vh; /* ocupa toda la altura de la ventana */
     background: linear-gradient(180deg, #101828 0%, #1f3a55 100%); /* degradado vertical */
     padding-top: 20px; /* espacio arriba para el menú */
