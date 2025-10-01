@@ -45,4 +45,10 @@ window.addEventListener('resize', handleResize);
 // ====== TAMAÑO INICIAL ======
 handleResize(); // comprobar tamaño al cargar la página
 
+// ======GitHub Link ======
+const githubBtn = document.getElementById('github');
+function openGitHub() {
+    window.open("https://github.com/PEDROMIRAS", "_blank");
+}
+githubBtn.addEventListener('click', openGitHub);
 // Fin script.js
