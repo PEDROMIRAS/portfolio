@@ -55,7 +55,7 @@ githubBtn.addEventListener('click', openGitHub);
 //====== Contact Link ======
 const contactBtn = document.getElementById('contact');
 function openContact() {
-    window.open("../public/contact.html", "_self");
+    window.location.href='public/contact.html';
 }
 contactBtn.addEventListener('click', openContact);
 // Fin script.js
