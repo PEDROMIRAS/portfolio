@@ -59,6 +59,7 @@ body {
     gap: 15px; /* Espacio entre elementos */
     margin: 20px 0; /* Margen vertical */
 }
+
 /* ====== H2 de social completamente estirado ====== */
 .social h2 {
     width: 100%; /* Ocupa todo el ancho del contenedor */
@@ -69,6 +70,7 @@ body {
     text-transform: uppercase;
     color: #ffffff;
 }
+
 .social ul {
     list-style: none; /* Quita los bullets */
     padding: 0;
@@ -187,4 +189,51 @@ footer {
 .separator {
     border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil transparente */
     margin: 10px 0; /* Espaciado vertical */
+}
+
+/* ============================
+    RESPONSIVE (MÓVILES)
+    ============================ */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Apila las columnas */
+    }
+
+    .info {
+        padding: 20px; /* Menos padding */
+        text-align: center; /* Centra texto */
+        align-items: center;
+    }
+
+    .social ul {
+        align-items: center; /* Centrar iconos */
+    }
+
+    .formulario {
+        padding: 40px 20px; /* Menos padding */
+        justify-content: center;
+    }
+
+    .form-box {
+        padding: 30px; /* Caja más compacta */
+        max-width: 100%; /* Que no se corte */
+    }
+
+    .form-box h2 {
+        font-size: 18px; /* Título más pequeño */
+    }
+
+    .form-box input,
+    .form-box textarea {
+        font-size: 13px; /* Inputs más adaptados */
+    }
+
+    .form-box button {
+        width: 100%; /* Botón ocupa todo el ancho */
+    }
+
+    footer {
+        font-size: 10px;
+        margin-top: 20px;
+    }
 }
