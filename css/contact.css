@@ -122,8 +122,9 @@ footer {
     flex: 2; /* Ocupa el doble de espacio que .info */
     background: linear-gradient(180deg, #1f3a55, #101828); /* Degradado inverso */
     display: flex; /* Contenedor flexible */
-    justify-content: flex-end; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    flex-direction: column; /* Coloca form-box y footer en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
     padding: 80px; /* Relleno interno */
 }
 
@@ -191,6 +192,14 @@ footer {
     margin: 10px 0; /* Espaciado vertical */
 }
 
+/* ====== Pie de página dentro de formulario ====== */
+.formulario footer {
+    margin-top: 20px; /* Espacio respecto al formulario */
+    text-align: center; /* Centrado */
+    color: #bbb; /* Gris claro */
+    font-size: 12px;
+}
+
 /* ============================
     RESPONSIVE (MÓVILES)
     ============================ */
@@ -232,7 +241,7 @@ footer {
         width: 100%; /* Botón ocupa todo el ancho */
     }
 
-    footer {
+    .formulario footer {
         font-size: 10px;
         margin-top: 20px;
     }
