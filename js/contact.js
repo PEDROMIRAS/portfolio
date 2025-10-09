@@ -14,7 +14,8 @@ linkedInBtn.addEventListener('click', openLinkedIn);
 //Discord
 const discordBtn = document.getElementById('discord');
 function openDiscord(){
-    window.open(" ","_blank");
+    window.open("https://discord.com/users/372295881925591041", "_blank");
 }
 discordBtn.addEventListener('click', openDiscord);
+
 //Fin contact.js
