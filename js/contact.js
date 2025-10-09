@@ -1,9 +1,12 @@
 //===== Social Contact =====//
 // Email
 const emailBtn = document.getElementById('email');
-function openEmail(){
-    window.open(" ","_blank");
-};
+function openEmail() {
+    const destinatario = "p.miraspc35@gmail.com"; //mi correo 
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}`;
+    window.open(url, "_blank");
+}
+emailBtn.addEventListener('click', openEmail);
 emailBtn.addEventListener('click', openEmail);
 //LinkedIn
 const linkedInBtn = document.getElementById('linkedIn');
