@@ -58,4 +58,11 @@ function openContact() {
     window.location.href='public/contact.html';
 }
 contactBtn.addEventListener('click', openContact);
+
+// ====== SMOOTH SCROLL PARA NAVEGACIÓN ======
+const menuItems = document.querySelectorAll('.menu li');
+const sections = document.querySelectorAll('.box');
+
+// Asignar data-section a cada item del menú en el HTML
+// y luego implementar scroll suave
 // Fin script.js
