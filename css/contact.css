@@ -1,248 +1,375 @@
 /* ============================
-    PALETA DE COLORES
+    PALETA DE COLORES MEJORADA
     ============================
     - Fondo principal: #101828 (gris oscuro/azulado)
-    - Sidebar: degradado de #101828 → #1f3a55
-    - Hover: degradado inverso #1f3a55 → #101828
+    - Acentos: #3b82f6 (azul vibrante)
+    - Hover: #60a5fa (azul claro)
 */
 
 /* ====== ESTILO GENERAL DEL BODY ====== */
 body {
-    margin: 0; /* Quita márgenes por defecto del navegador */
-    font-family: 'Roboto', Arial, sans-serif; /* Fuente principal */
-    background: linear-gradient(180deg, #101828, #1f3a55); /* Degradado vertical de fondo */
-    color: #e0e0e0; /* Texto claro por defecto */
-    display: flex; /* El body se comporta como un contenedor flexible */
-    transition: background 0.3s; /* Transición suave si cambia el fondo */
+    margin: 0; /* Elimina los márgenes por defecto del navegador */
+    font-family: 'Roboto', Arial, sans-serif; /* Define la fuente principal del sitio */
+    background: linear-gradient(135deg, #101828 0%, #1f3a55 100%); /* Degradado diagonal de azul oscuro a azul medio */
+    color: #e0e0e0; /* Color de texto gris claro por defecto */
+    display: flex; /* Activa flexbox para organizar el contenido */
+    min-height: 100vh; /* Altura mínima del 100% del viewport (pantalla completa) */
+    transition: background 0.3s; /* Transición suave de 0.3 segundos si cambia el fondo */
 }
 
 /* ====== CONTENEDOR PRINCIPAL ====== */
 .container {
-    display: flex; /* Distribuye en columnas los hijos (.info y .formulario) */
-    min-height: 100vh; /* Altura mínima = 100% del viewport */
+    display: flex; /* Activa flexbox para distribuir las columnas */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    min-height: 100vh; /* Altura mínima del 100% del viewport */
 }
 
-/* ====== Columna izquierda (Sidebar de información) ====== */
+/* ====== Columna izquierda (Información de contacto) ====== */
 .info {
-    flex: 1; /* Ocupa 1 parte proporcional (1/3) del espacio */
-    padding: 50px; /* Espaciado interno */
-    background: transparent; /* Transparente para que se vea el degradado del body */
-    color: #e0e0e0; /* Texto claro */
-    display: flex; /* Distribuye los elementos en columna */
-    flex-direction: column;
-    justify-content: space-between; /* Espacia arriba y abajo el contenido */
+    flex: 1; /* Ocupa 1 parte proporcional del espacio (1/2.5 aprox) */
+    padding: 60px 50px; /* Espaciado interno: 60px arriba/abajo, 50px izq/der */
+    background: transparent; /* Fondo transparente para mostrar el degradado del body */
+    color: #e0e0e0; /* Color de texto gris claro */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza elementos en columna vertical */
+    justify-content: center; /* Centra verticalmente el contenido */
+    gap: 40px; /* Espacio de 40px entre elementos hijos */
 }
 
 .info h2 {
-    font-size: 18px; /* Tamaño de subtítulo */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    margin-bottom: 15px; /* Separación inferior */
-    text-transform: uppercase; /* Convierte texto a mayúsculas */
-    color: #ffffff; /* Color blanco puro */
+    font-size: 2rem; /* Tamaño de fuente de 32px (2 x 16px base) */
+    letter-spacing: 1px; /* Espacio de 1px entre cada letra */
+    margin-bottom: 20px; /* Margen inferior de 20px */
+    color: #ffffff; /* Color blanco puro para el título */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    position: relative; /* Posicionamiento relativo para elementos absolutos hijos */
+    padding-bottom: 10px; /* Espaciado inferior interno de 10px */
+}
+
+/* Línea decorativa bajo el título */
+.info h2::after {
+    content: ''; /* Contenido vacío para crear un pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto respecto al h2 */
+    bottom: 0; /* Se posiciona en la parte inferior del h2 */
+    left: 0; /* Alineado a la izquierda */
+    width: 60px; /* Ancho de 60px para la línea decorativa */
+    height: 3px; /* Altura de 3px (grosor de la línea) */
+    background: linear-gradient(90deg, #3b82f6, #60a5fa); /* Degradado horizontal azul */
+    border-radius: 2px; /* Bordes redondeados de 2px */
 }
 
 .info p {
-    margin: 5px 0 20px 0; /* Márgenes arriba y abajo */
-    line-height: 1.5; /* Altura de línea */
-    color: #cfd8e3; /* Gris más claro para mejor legibilidad */
+    margin: 8px 0; /* Margen vertical de 8px, sin margen horizontal */
+    line-height: 1.8; /* Altura de línea 1.8 veces el tamaño de fuente */
+    color: #d1d5db; /* Color gris claro para mejor legibilidad */
+    font-size: 1rem; /* Tamaño de fuente de 16px (tamaño base) */
 }
 
-/* ====== OCULTAR DIV CONTACT ====== */
+/* ====== OCULTAR DIV CONTACT (información inventada) ====== */
 .info .contact {
-    display: none; /* Oculta el bloque de contacto */
+    display: none; /* Oculta completamente este bloque del DOM visual */
 }
 
-/* ====== ESTILO MEJORADO PARA DIV SOCIAL ====== */
+/* ====== SECCIÓN SOCIAL MEJORADA ====== */
 .social {
-    display: flex; /* Flex para alinear elementos */
-    flex-direction: column; /* Columna vertical */
-    gap: 15px; /* Espacio entre elementos */
-    margin: 20px 0; /* Margen vertical */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza elementos en columna vertical */
+    gap: 20px; /* Espacio de 20px entre elementos */
 }
 
-/* ====== H2 de social completamente estirado ====== */
 .social h2 {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    text-align: left; /* Alineación a la izquierda */
-    margin-bottom: 25px; /* Más espacio debajo */
-    font-size: 20px; /* Tamaño un poco mayor */
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #ffffff;
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 15px; /* Margen inferior de 15px */
 }
 
 .social ul {
-    list-style: none; /* Quita los bullets */
-    padding: 0;
-    display: flex; /* Flex para alinear icono + texto */
-    flex-direction: column; /* Columnas verticales */
-    gap: 10px; /* Separación entre cada item */
+    list-style: none; /* Elimina los bullets/viñetas de la lista */
+    padding: 0; /* Elimina el padding por defecto de la lista */
+    margin: 0; /* Elimina el margen por defecto de la lista */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza items en columna vertical */
+    gap: 15px; /* Espacio de 15px entre cada item de la lista */
 }
 
 .social ul li {
-    display: flex; /* Flex para icono + texto */
-    align-items: center; /* Centra verticalmente */
-    gap: 10px; /* Espacio entre icono y texto */
-    font-size: 16px;
-    color: #e0e0e0;
-    cursor: pointer;
-    transition: color 0.3s;
+    display: flex; /* Activa flexbox para alinear icono y texto */
+    align-items: center; /* Centra verticalmente icono y texto */
+    gap: 15px; /* Espacio de 15px entre icono y texto */
+    padding: 15px 20px; /* Espaciado interno: 15px arriba/abajo, 20px izq/der */
+    font-size: 1.1rem; /* Tamaño de fuente de 17.6px */
+    color: #e0e0e0; /* Color de texto gris claro */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento */
+    background: rgba(59, 130, 246, 0.05); /* Fondo azul muy transparente (5% opacidad) */
+    border: 1px solid rgba(59, 130, 246, 0.2); /* Borde azul con 20% opacidad */
+    border-radius: 12px; /* Bordes redondeados de 12px */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todas las propiedades */
+    font-weight: 500; /* Grosor de fuente medio */
 }
 
 .social ul li:hover {
-    color: #ffffff; /* Texto blanco al pasar */
+    color: #ffffff; /* Cambia texto a blanco al pasar el cursor */
+    background: rgba(59, 130, 246, 0.15); /* Fondo azul más visible (15% opacidad) */
+    border-color: rgba(59, 130, 246, 0.4); /* Borde azul más intenso (40% opacidad) */
+    transform: translateX(10px); /* Desplaza el elemento 10px hacia la derecha */
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3); /* Sombra azul difusa */
 }
 
 .social ul i {
-    font-size: 30px; /* Iconos más consistentes */
-    background: #1f3a55; /* Fondo circular */
-    padding: 8px;
-    border-radius: 50%;
-    color: #e0e0e0;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
+    font-size: 1.8rem; /* Tamaño de fuente del icono de 28.8px */
+    width: 50px; /* Ancho fijo de 50px para el contenedor del icono */
+    height: 50px; /* Alto fijo de 50px para el contenedor del icono */
+    display: flex; /* Activa flexbox para centrar el icono */
+    align-items: center; /* Centra verticalmente el icono */
+    justify-content: center; /* Centra horizontalmente el icono */
+    background: rgba(59, 130, 246, 0.2); /* Fondo azul con 20% opacidad */
+    border-radius: 50%; /* Bordes completamente redondeados (círculo) */
+    color: #60a5fa; /* Color azul claro para el icono */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todas las propiedades */
+    flex-shrink: 0; /* Evita que el icono se comprima si falta espacio */
 }
 
 .social ul li:hover i {
-    background: linear-gradient(180deg, #1f3a55, #101828);
-    color: #ffffff;
-    transform: scale(1.1);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Efecto de brillo al pasar */
+    background: rgba(59, 130, 246, 0.8); /* Fondo azul más intenso (80% opacidad) al hover */
+    color: #ffffff; /* Icono cambia a color blanco al hover */
+    transform: rotate(360deg) scale(1.1); /* Rota 360 grados y aumenta tamaño 10% */
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); /* Efecto glow azul alrededor del icono */
 }
 
-/* ====== PIE DE PÁGINA ====== */
-footer {
-    padding: 15px 20px; /* Espaciado interno */
-    font-size: 12px; /* Tamaño pequeño */
-    text-align: center; /* Texto centrado */
-    color: #bbb; /* Gris claro */
-}
-
-/* ====== Columna derecha (Formulario de contacto) ====== */
+/* ====== Columna derecha (Formulario) ====== */
 .formulario {
-    flex: 2; /* Ocupa el doble de espacio que .info */
-    background: linear-gradient(180deg, #1f3a55, #101828); /* Degradado inverso */
-    display: flex; /* Contenedor flexible */
-    flex-direction: column; /* Coloca form-box y footer en columna */
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    padding: 80px; /* Relleno interno */
+    flex: 1.5; /* Ocupa 1.5 partes proporcionales (más ancho que .info) */
+    background: rgba(16, 24, 40, 0.6); /* Fondo oscuro semi-transparente (60% opacidad) */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo (glassmorphism) */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza elementos en columna vertical */
+    justify-content: center; /* Centra verticalmente el contenido */
+    align-items: center; /* Centra horizontalmente el contenido */
+    padding: 60px 40px; /* Espaciado interno: 60px arriba/abajo, 40px izq/der */
+    position: relative; /* Posicionamiento relativo para elementos absolutos hijos */
 }
 
-/* ====== Caja del formulario (Tarjeta blanca) ====== */
+/* Efecto decorativo en el borde */
+.formulario::before {
+    content: ''; /* Contenido vacío para crear un pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto respecto a .formulario */
+    top: 0; /* Se posiciona en la parte superior */
+    left: 0; /* Se posiciona en el borde izquierdo */
+    width: 3px; /* Ancho de 3px para la línea vertical */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    background: linear-gradient(180deg, #3b82f6, #60a5fa); /* Degradado vertical azul */
+}
+
+/* ====== Caja del formulario ====== */
 .form-box {
-    background: #ffffff; /* Fondo blanco */
-    color: #101828; /* Texto oscuro */
-    padding: 70px; /* Espaciado interno amplio */
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Sombra flotante */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 500px; /* Máximo ancho limitado */
-    text-align: center; /* Centra el texto dentro */
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco casi opaco (95% opacidad) */
+    color: #101828; /* Color de texto oscuro */
+    padding: 50px 40px; /* Espaciado interno: 50px arriba/abajo, 40px izq/der */
+    border-radius: 16px; /* Bordes muy redondeados de 16px */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); /* Sombra grande y difusa */
+    width: 100%; /* Ocupa todo el ancho disponible del padre */
+    max-width: 500px; /* Ancho máximo de 500px */
+    text-align: center; /* Centra el texto dentro del formulario */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    border: 1px solid rgba(59, 130, 246, 0.1); /* Borde azul muy sutil */
 }
 
 .form-box h2 {
-    font-size: 22px; /* Tamaño del título */
-    margin-bottom: 20px; /* Separación inferior */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    color: #101828; /* Texto oscuro */
-    text-transform: uppercase; /* Mayúsculas */
+    font-size: 1.8rem; /* Tamaño de fuente de 28.8px */
+    margin-bottom: 30px; /* Margen inferior de 30px */
+    letter-spacing: 1px; /* Espacio de 1px entre cada letra */
+    color: #101828; /* Color de texto oscuro */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    position: relative; /* Posicionamiento relativo para elementos absolutos hijos */
+    padding-bottom: 15px; /* Espaciado inferior interno de 15px */
 }
 
-/* ====== Inputs y textarea ====== */
+/* Línea decorativa bajo el título del formulario */
+.form-box h2::after {
+    content: ''; /* Contenido vacío para crear un pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto respecto al h2 */
+    bottom: 0; /* Se posiciona en la parte inferior del h2 */
+    left: 50%; /* Se posiciona al 50% desde la izquierda */
+    transform: translateX(-50%); /* Se desplaza 50% de su propio ancho hacia la izquierda para centrarse */
+    width: 80px; /* Ancho de 80px para la línea decorativa */
+    height: 3px; /* Altura de 3px (grosor de la línea) */
+    background: linear-gradient(90deg, #3b82f6, #60a5fa); /* Degradado horizontal azul */
+    border-radius: 2px; /* Bordes redondeados de 2px */
+}
+
+/* ====== Inputs y textarea mejorados ====== */
 .form-box input, 
 .form-box textarea {
-    width: 100%; /* Ocupa todo el ancho */
-    padding: 12px; /* Relleno interno */
-    margin-bottom: 15px; /* Separación entre campos */
-    border: 1px solid #ccc; /* Borde gris claro */
-    outline: none; /* Quita contorno azul de focus */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 14px; /* Tamaño de texto */
-    background: #f9f9f9; /* Fondo gris muy claro */
-    color: #101828; /* Texto oscuro */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 15px 5px; /* Espaciado interno: 14px arriba/abajo, 16px izq/der */
+    margin-bottom: 20px; /* Margen inferior de 20px entre campos */
+    border: 2px solid #e5e7eb; /* Borde gris claro de 2px */
+    outline: none; /* Elimina el contorno azul por defecto del navegador */
+    border-radius: 8px; /* Bordes redondeados de 8px */
+    font-size: 0.95rem; /* Tamaño de fuente de 15.2px */
+    background: #f9fafb; /* Fondo gris muy claro */
+    color: #101828; /* Color de texto oscuro */
+    font-family: 'Roboto', Arial, sans-serif; /* Fuente consistente con el resto del sitio */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todas las propiedades */
+}
+
+.form-box input:focus, 
+.form-box textarea:focus {
+    border-color: #3b82f6; /* Cambia borde a azul cuando el campo está enfocado */
+    background: #ffffff; /* Cambia fondo a blanco puro cuando está enfocado */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Sombra azul sutil alrededor del campo */
+}
+
+.form-box input::placeholder,
+.form-box textarea::placeholder {
+    color: #9ca3af; /* Color gris medio para el texto placeholder */
 }
 
 .form-box textarea {
-    resize: none; /* Bloquea el redimensionado */
-    height: 120px; /* Altura fija */
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    min-height: 120px; /* Altura mínima de 120px */
+    max-height: 300px; /* Altura máxima de 300px */
 }
 
-/* ====== Botón ====== */
+/* ====== Botón mejorado ====== */
 .form-box button {
-    background: #243b64; /* Fondo azul oscuro */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    background: linear-gradient(135deg, #3b82f6, #60a5fa); /* Degradado diagonal azul */
     border: none; /* Sin borde */
     color: #ffffff; /* Texto blanco */
-    padding: 12px 25px; /* Espaciado interno */
-    cursor: pointer; /* Mano al pasar */
-    transition: 0.3s; /* Transición suave en hover */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    font-weight: bold; /* Negrita */
-    border-radius: 5px; /* Bordes redondeados */
+    padding: 14px 30px; /* Espaciado interno: 14px arriba/abajo, 30px izq/der */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todas las propiedades */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    font-size: 0.95rem; /* Tamaño de fuente de 15.2px */
+    letter-spacing: 1px; /* Espacio de 1px entre cada letra */
+    border-radius: 8px; /* Bordes redondeados de 8px */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); /* Sombra azul difusa */
 }
 
 .form-box button:hover {
-    background: #ffffff; /* Fondo blanco */
-    color: #243b64; /* Texto azul oscuro */
-    border: 2px solid #243b64; /* Borde azul */
+    transform: translateY(-2px); /* Eleva el botón 2px hacia arriba al pasar el cursor */
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5); /* Aumenta la intensidad de la sombra */
+    background: linear-gradient(135deg, #2563eb, #3b82f6); /* Degradado azul más oscuro */
 }
 
-/* ====== SEPARADOR ====== */
-.separator {
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil transparente */
-    margin: 10px 0; /* Espaciado vertical */
+.form-box button:active {
+    transform: translateY(0); /* Vuelve a posición original al hacer clic */
 }
 
-/* ====== Pie de página dentro de formulario ====== */
-.formulario footer {
-    margin-top: 20px; /* Espacio respecto al formulario */
-    text-align: center; /* Centrado */
-    color: #bbb; /* Gris claro */
-    font-size: 12px;
+/* ====== Footer mejorado ====== */
+footer {
+    margin-top: 30px; /* Margen superior de 30px */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #9ca3af; /* Color gris medio */
+    font-size: 0.85rem; /* Tamaño de fuente de 13.6px */
+}
+
+footer small {
+    opacity: 0.8; /* Reduce opacidad al 80% para efecto sutil */
+}
+
+/* ====== BOTÓN DE VOLVER (OPCIONAL) ====== */
+.back-button {
+    position: fixed; /* Posición fija en la pantalla (no se mueve al hacer scroll) */
+    top: 20px; /* 20px desde el borde superior */
+    left: 20px; /* 20px desde el borde izquierdo */
+    background: rgba(59, 130, 246, 0.9); /* Fondo azul semi-transparente (90% opacidad) */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 12px 20px; /* Espaciado interno: 12px arriba/abajo, 20px izq/der */
+    border-radius: 8px; /* Bordes redondeados de 8px */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    font-size: 1rem; /* Tamaño de fuente de 16px */
+    display: flex; /* Activa flexbox para alinear icono y texto */
+    align-items: center; /* Centra verticalmente icono y texto */
+    gap: 8px; /* Espacio de 8px entre icono y texto */
+    transition: all 0.3s ease; /* Transición suave de 0.3s para todas las propiedades */
+    z-index: 1000; /* Valor alto para que esté sobre otros elementos */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+}
+
+.back-button:hover {
+    background: rgba(59, 130, 246, 1); /* Fondo azul completamente opaco al hover */
+    transform: translateX(-5px); /* Desplaza el botón 5px hacia la izquierda */
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4); /* Sombra azul difusa */
 }
 
 /* ============================
     RESPONSIVE (MÓVILES)
     ============================ */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Aplica estilos cuando la pantalla es menor a 768px */
     .container {
-        flex-direction: column; /* Apila las columnas */
+        flex-direction: column; /* Cambia de fila a columna (apila verticalmente) */
     }
 
     .info {
-        padding: 20px; /* Menos padding */
-        text-align: center; /* Centra texto */
-        align-items: center;
+        padding: 40px 25px; /* Reduce el padding en móviles */
+        text-align: center; /* Centra el texto */
+    }
+
+    .info h2 {
+        font-size: 1.5rem; /* Reduce tamaño de fuente a 24px en móviles */
+    }
+
+    .info h2::after {
+        left: 50%; /* Centra la línea decorativa */
+        transform: translateX(-50%); /* Ajusta posición para centrado perfecto */
     }
 
     .social ul {
-        align-items: center; /* Centrar iconos */
+        align-items: stretch; /* Estira los items para ocupar todo el ancho */
+    }
+
+    .social ul li {
+        justify-content: center; /* Centra contenido de cada item */
     }
 
     .formulario {
-        padding: 40px 20px; /* Menos padding */
-        justify-content: center;
+        padding: 40px 25px; /* Reduce el padding en móviles */
+    }
+
+    .formulario::before {
+        width: 100%; /* Línea decorativa ocupa todo el ancho */
+        height: 3px; /* Cambia de vertical a horizontal (3px de alto) */
     }
 
     .form-box {
-        padding: 25px; /* Caja más compacta */
-        max-width: 100%; /* Que no se corte */
+        padding: 35px 25px; /* Reduce padding del formulario en móviles */
     }
 
     .form-box h2 {
-        font-size: 16px; /* Título más pequeño */
+        font-size: 1.5rem; /* Reduce tamaño de fuente a 24px en móviles */
     }
 
     .form-box input,
     .form-box textarea {
-        font-size: 12px; /* Inputs más adaptados */
+        font-size: 0.9rem; /* Reduce tamaño de fuente a 14.4px en móviles */
     }
 
-    .form-box button {
-        width: 100%; /* Botón ocupa todo el ancho */
-    }
-
-    .formulario footer {
-        font-size: 10px;
-        margin-top: 20px;
+    .back-button {
+        top: 10px; /* Reduce espacio desde el borde superior */
+        left: 10px; /* Reduce espacio desde el borde izquierdo */
+        padding: 10px 15px; /* Reduce padding en móviles */
+        font-size: 0.9rem; /* Reduce tamaño de fuente a 14.4px */
     }
 }
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeIn { /* Define animación de entrada con fade */
+    from { /* Estado inicial */
+        opacity: 0; /* Completamente transparente */
+        transform: translateY(20px); /* Desplazado 20px hacia abajo */
+    }
+    to { /* Estado final */
+        opacity: 1; /* Completamente opaco */
+        transform: translateY(0); /* En su posición original */
+    }
+}
+
+.form-box, .social { /* Aplica animación a estos elementos */
+    animation: fadeIn 0.6s ease-out; /* Animación de 0.6 segundos con aceleración al final */
+}
+
+/* Fin del archivo contact.css mejorado */

@@ -3,53 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - Portfolio</title>
     <link rel="stylesheet" href="../css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Botón para volver -->
+    <button class="back-button" onclick="window.location.href='../index.html'">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver
+    </button>
+
     <div class="container">
-        <!-- Columna izquierda -->
-        <!--.info actualmente oculta aunque sea informacion inventada-->
+        <!-- Columna izquierda - Información de contacto -->
         <div class="info">
+            <!-- Información de dirección (oculta) -->
             <div class="contact">
                 <h2>Donde encontrarnos</h2>
-                <p>Dirección:</p>
-                <p>Avenida del Sol, 123
-                    Edificio Nova, Planta 5
-                    28045, Ciudad Nova</p>
-                <p>Teléfono: +34 600 123 456</p>
-                <p>Email: contacto@tudominio.com</p>
+                <p><strong>Dirección:</strong></p>
+                <p>Avenida del Sol, 123<br>
+                Edificio Nova, Planta 5<br>
+                28045, Ciudad Nova</p>
+                <p><strong>Teléfono:</strong> +34 600 123 456</p>
+                <p><strong>Email:</strong> contacto@tudominio.com</p>
             </div>
 
+            <!-- Sección de redes sociales -->
             <div class="social">
-                <h2>Otras formas de contacto</h2>
+                <h2>Conecta conmigo</h2>
                 <ul>
-                    <li id="linkedIn"><i class="fa-brands fa-linkedin-in"></i></i>LinkedIn</li>
-                    <li id="email"><i class="fa-solid fa-envelope"></i>Email</li>
-                    <li id="discord"><i class="fa-brands fa-discord"></i>Discord</li>
+                    <li id="linkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>Sígueme en LinkedIn</span>
+                    </li>
+                    <li id="email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Envíame un correo</span>
+                    </li>
+                    <li id="discord">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>Chatea en Discord</span>
+                    </li>
                 </ul>
             </div>
-
         </div>
 
-        <!-- Columna derecha -->
+        <!-- Columna derecha - Formulario -->
         <div class="formulario">
             <div class="form-box">
-                <h2>Formulario de contacto</h2>
-                <form>
-                    <input type="text" name="nombre" placeholder="Enter your Name" required>
-                    <input type="email" name="mail" placeholder="Enter a valid email address" required>
-                    <textarea placeholder="Enter your message" required></textarea>
-                    <button type="submit">Enviar</button>
+                <h2>Envíame un mensaje</h2>
+                <form id="contactForm">
+                    <input 
+                        type="text" 
+                        name="nombre" 
+                        placeholder="Tu nombre completo" 
+                        required
+                        autocomplete="name"
+                    >
+                    <input 
+                        type="email" 
+                        name="mail" 
+                        placeholder="tu@email.com" 
+                        required
+                        autocomplete="email"
+                    >
+                    <textarea 
+                        name="mensaje"
+                        placeholder="Escribe tu mensaje aquí..." 
+                        required
+                        rows="5"
+                    ></textarea>
+                    <button type="submit">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+                    </button>
                 </form>
             </div>
             <footer>
-            <small>© 2025 Política de privacidad</small>
-        </footer>
+                <small>© 2025 Pedro Miras | Política de privacidad</small>
+            </footer>
         </div>
-        
     </div>
+
     <script src="../js/contact.js"></script>
 </body>
 </html>
