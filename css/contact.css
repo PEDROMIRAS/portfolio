@@ -224,17 +224,17 @@ footer {
     }
 
     .form-box {
-        padding: 30px; /* Caja más compacta */
+        padding: 25px; /* Caja más compacta */
         max-width: 100%; /* Que no se corte */
     }
 
     .form-box h2 {
-        font-size: 18px; /* Título más pequeño */
+        font-size: 16px; /* Título más pequeño */
     }
 
     .form-box input,
     .form-box textarea {
-        font-size: 13px; /* Inputs más adaptados */
+        font-size: 12px; /* Inputs más adaptados */
     }
 
     .form-box button {
