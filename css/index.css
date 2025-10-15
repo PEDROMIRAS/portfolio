@@ -24,7 +24,8 @@ body {
     left: 0; /* Pegado al borde izquierdo */
     width: 180px; /* Ancho de 180px cuando está expandida */
     height: 100vh; /* Altura del 100% del viewport (pantalla completa) */
-    background: linear-gradient(180deg, #101828 0%, #1f3a55 100%); /* Degradado vertical azul oscuro */
+    background: linear-gradient(180deg, #101828 0%, #1a2942 50%, #1f3a55 100%); /* Degradado vertical con tono medio azul */
+    border-right: 1px solid rgba(59, 130, 246, 0.3); /* Borde derecho azul con 30% opacidad */
     padding-top: 20px; /* Espaciado superior de 20px */
     overflow: hidden; /* Oculta contenido que sobresalga */
     z-index: 100; /* Nivel de apilamiento alto para estar sobre el contenido */
@@ -161,23 +162,27 @@ body {
 
 /* ====== FOOTER EN SIDEBAR MEJORADO ====== */
 .sidebar-footer {
-    padding: 15px 20px; /* Espaciado interno: 15px arriba/abajo, 20px izq/der */
+    padding: 15px 20px 20px; /* Espaciado interno: 15px arriba/abajo, 20px izq/der */
     font-size: 12px; /* Tamaño de fuente pequeño */
     text-align: center; /* Texto centrado */
     border-top: 1px solid rgba(96, 165, 250, 0.2); /* Borde superior azul claro */
     color: #9ca3af; /* Color gris medio */
     margin-bottom: 10px; /* Margen inferior 10px */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Transición suave incluyendo visibility */
+    overflow: hidden; /* Oculta contenido que sobresalga */
 }
 
 .sidebar-footer p {
     margin: 0; /* Elimina margen del párrafo */
     color: #9ca3af; /* Color gris medio */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
 }
 
 .sidebar.collapsed .sidebar-footer {
     opacity: 0; /* Hace invisible el footer */
     transform: translateX(-20px); /* Desplaza footer 20px a la izquierda */
+    visibility: hidden; /* Oculta completamente del flujo visual */
+    pointer-events: none; /* Desactiva la interacción con el elemento oculto */
 }
 
 /* ====== CONTENIDO PRINCIPAL ====== */
